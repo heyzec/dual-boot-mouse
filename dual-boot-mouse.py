@@ -6,7 +6,8 @@ import codecs
 print("""Please ensure these steps have been done before running this script.
 Step 1: Pair device in Linux
 Step 2: Pair device in Windows
-Step 3: Run Get BTKeys.bat as Adminstrator in Windows
+Step 3: Download PSExec.
+Step 4: Run GetBTKeys.bat as Adminstrator in Windows
 """)
 
 if os.getuid() != 0:
