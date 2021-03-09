@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import os
+import sys
 import configparser
 import codecs
 
@@ -11,8 +12,8 @@ Step 4: Run GetBTKeys.bat as Adminstrator in Windows
 """)
 
 if os.getuid() != 0:
-    print("This script requires root privileges. Please return using sudo.")
-    exit()
+    print("This script requires root privileges. Please rerun using sudo.")
+    sys.exit(1)
 
 def process_hex(hex_str, reverse=False, joiner=''):
     """Converts Windows MAC format to Linux eg. a1b2c3d4e5f6 -> A1:B2:C3:D4:E5:F6"""
