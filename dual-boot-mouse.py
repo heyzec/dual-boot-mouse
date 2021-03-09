@@ -33,7 +33,7 @@ try:
         data = f.read()
 except FileNotFoundError:
     print("ERROR: BTKeys.reg not found. Have you done step 3?")
-    exit()
+    sys.exit(1)
 data = data.replace('"', '')
 data = (line.strip() for line in data.split('\r\n')[1:])
 config = configparser.ConfigParser()
