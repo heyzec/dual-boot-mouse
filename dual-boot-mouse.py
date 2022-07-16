@@ -121,7 +121,7 @@ changes = [
 
 
 # Load Linux bluetooth info file into a ConfigParser object
-LINUX_DEVICE_INFO_PATH = f"{LINUX_PAIRINGS_DIR}/{linux_controller_mac}/{win_device_mac}/info"
+LINUX_DEVICE_INFO_PATH = f"{LINUX_PAIRINGS_DIR}/{linux_controller_mac}/{linux_device_mac}/info"
 config = configparser.ConfigParser()
 config.optionxform = str  # To preserve case
 with open(LINUX_DEVICE_INFO_PATH) as f:
@@ -159,7 +159,7 @@ if cmd:
     os.system(cmd)
 for s, k, new_value in changes:
     config[s][k] = new_value
-with open(LINUX_DEVICE_INFO_PATH, 'w') as f:
+with open(f"{LINUX_PAIRINGS_DIR}/{linux_controller_mac}/{win_device_mac}/info", 'w') as f:
     config.write(f, False)
 
 # Reload bluetooth module
